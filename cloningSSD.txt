@@ -1,6 +1,14 @@
+﻿Przeniesienie dysków (klonowanie) duży HDD na mały SSD:
+-odczytać podział partycji z dysku HDD,
+-sformatować SSD, utworzyć identyczne partycje (SYSTEM, [pliki systemowe+dane],
+-utworzyć dysk instalacyjny linux
+-clonezilla -> disk to disk -> partition to partition, sklonować kolejno odpowiadające partycje,
+-utworzyć dysk pendrive instalacyjny widndows
+-z lini komend windows wybrać kolejno:
 
 bootrec /fixmbr
 
+potem wybrać partycję z folderem windows, jako aktywną:
 
 diskpart 
 
@@ -10,9 +18,11 @@ select partition
 
 active
 
+potem dodać folder rozruchowy do bootrecordu
 
 bcdboot C:\windows /l pl-PL
 
+albo (co niezbyt działa) bootrec /RebuildBcd
 
 koniec
 
