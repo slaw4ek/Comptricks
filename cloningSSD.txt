@@ -1,0 +1,19 @@
+
+bootrec /fixmbr
+
+
+diskpart 
+
+select disk
+
+select partition
+
+active
+
+
+bcdboot C:\windows /l pl-PL
+
+
+koniec
+
+
